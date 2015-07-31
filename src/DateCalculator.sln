@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1F0BA828-55A4-4228-B839-DC3B3F02B028}"
+	ProjectSection(SolutionItems) = preProject
+		DateCalculator.vsmdi = DateCalculator.vsmdi
+		LocalTestRun.testrunconfig = LocalTestRun.testrunconfig
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateCalculator.UI", "DateCalculator\DateCalculator.UI.csproj", "{53565746-A1F3-4C84-8B54-103F1D414707}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateCalculator.Lib", "DateCalculator.Lib\DateCalculator.Lib.csproj", "{98A92A52-0FF5-4A14-B3E5-EB462E47151F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DateCalculator.Tests", "DateCalculator.Tests\DateCalculator.Tests.csproj", "{F58B31CF-B9D6-45DD-AE0A-E5A76E19A912}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DateCalculator.Setup(x86)", "DateCalculator.Setup(x86)\DateCalculator.Setup(x86).vdproj", "{1BA9ABF1-2806-4C5A-B795-68AD81372DD2}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "DateCalculator.Setup(x64)", "DateCalculator.Setup(x64)\DateCalculator.Setup(x64).vdproj", "{5547C906-9367-4E20-AF6F-478E7AAF4050}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = DateCalculator.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{53565746-A1F3-4C84-8B54-103F1D414707}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53565746-A1F3-4C84-8B54-103F1D414707}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53565746-A1F3-4C84-8B54-103F1D414707}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53565746-A1F3-4C84-8B54-103F1D414707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98A92A52-0FF5-4A14-B3E5-EB462E47151F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98A92A52-0FF5-4A14-B3E5-EB462E47151F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98A92A52-0FF5-4A14-B3E5-EB462E47151F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98A92A52-0FF5-4A14-B3E5-EB462E47151F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F58B31CF-B9D6-45DD-AE0A-E5A76E19A912}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F58B31CF-B9D6-45DD-AE0A-E5A76E19A912}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F58B31CF-B9D6-45DD-AE0A-E5A76E19A912}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F58B31CF-B9D6-45DD-AE0A-E5A76E19A912}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1BA9ABF1-2806-4C5A-B795-68AD81372DD2}.Debug|Any CPU.ActiveCfg = Debug
+		{1BA9ABF1-2806-4C5A-B795-68AD81372DD2}.Debug|Any CPU.Build.0 = Debug
+		{1BA9ABF1-2806-4C5A-B795-68AD81372DD2}.Release|Any CPU.ActiveCfg = Release
+		{1BA9ABF1-2806-4C5A-B795-68AD81372DD2}.Release|Any CPU.Build.0 = Release
+		{5547C906-9367-4E20-AF6F-478E7AAF4050}.Debug|Any CPU.ActiveCfg = Debug
+		{5547C906-9367-4E20-AF6F-478E7AAF4050}.Debug|Any CPU.Build.0 = Debug
+		{5547C906-9367-4E20-AF6F-478E7AAF4050}.Release|Any CPU.ActiveCfg = Release
+		{5547C906-9367-4E20-AF6F-478E7AAF4050}.Release|Any CPU.Build.0 = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
