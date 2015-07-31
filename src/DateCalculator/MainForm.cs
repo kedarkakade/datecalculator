@@ -6,12 +6,20 @@ namespace DateCalculator.UI
 {
     public partial class MainForm : Form
     {
+        private const string CalculateAgeOrExperienceTab = "DifferenceTab";
+        private const string AddSubtractDateTab = "AddSubtractDate";
+
         public MainForm()
         {
             InitializeComponent();
         }
 
-        private void CalculateButton_Click(object sender, EventArgs e)
+        private void CalculateButtonClick(object sender, EventArgs e)
+        {
+            CalculateAgeOrExperience();
+        }
+
+        private void CalculateAgeOrExperience()
         {
             var firstInput = FirstDate.Value > SecondDate.Value ? SecondDate.Value : FirstDate.Value;
             var secondInput = FirstDate.Value > SecondDate.Value ? FirstDate.Value : SecondDate.Value;
@@ -22,20 +30,36 @@ namespace DateCalculator.UI
             ResultSummary.Bind();
         }
 
-        private void ResetButton_Click(object sender, EventArgs e)
+        private void ResetButtonClick(object sender, EventArgs e)
+        {
+            ResetAgeOrExperienceInputsAndOutputs();
+        }
+
+        private void ResetAgeOrExperienceInputsAndOutputs()
         {
             FirstDate.Value = SecondDate.Value = DateTime.Now;
             ResultSummary.Reset();
         }
 
-        private void Reset2Button_Click(object sender, EventArgs e)
+        private void Reset2ButtonClick(object sender, EventArgs e)
+        {
+            ResetAddSubtractDateInputsAndOutputs();
+        }
+
+        private void ResetAddSubtractDateInputsAndOutputs()
         {
             FromDate.Value = DateTime.Today;
             Years.Value = Months.Value = Days.Value = 0;
             Add.Checked = true;
+            ResultedDate.Clear();
         }
 
-        private void Calculate2Button_Click(object sender, EventArgs e)
+        private void Calculate2ButtonClick(object sender, EventArgs e)
+        {
+            CalculateResultsForAddOrSubtractDate();
+        }
+
+        private void CalculateResultsForAddOrSubtractDate()
         {
             var fromDate = FromDate.Value;
 
@@ -47,9 +71,50 @@ namespace DateCalculator.UI
                                    Months = Convert.ToInt32(Months.Value),
                                    Days = Convert.ToInt32(Days.Value)
                                };
+
             var result = Calculator.GetModifiedDate(fromDate, function, dateSpan);
 
             ResultedDate.Text = result.ToLongDateString();
+        }
+
+        private void ExitMenuClick(object sender, EventArgs e)
+        {
+            Close();
+            Application.Exit();
+        }
+
+        private void ResetMenuClick(object sender, EventArgs e)
+        {
+            switch (ApplicationTabs.SelectedTab.Name)
+            {
+                case CalculateAgeOrExperienceTab:
+                    ResetAgeOrExperienceInputsAndOutputs();
+                    break;
+
+                case AddSubtractDateTab:
+                    ResetAddSubtractDateInputsAndOutputs();
+                    break;
+            }
+        }
+
+        private void CalculateMenuClick(object sender, EventArgs e)
+        {
+            switch (ApplicationTabs.SelectedTab.Name)
+            {
+                case CalculateAgeOrExperienceTab:
+                    CalculateAgeOrExperience();
+                    break;
+
+                case AddSubtractDateTab:
+                    CalculateResultsForAddOrSubtractDate();
+                    break;
+            }
+        }
+
+        private void AboutMenuClick(object sender, EventArgs e)
+        {
+            var aboutForm = new AboutDateCalculator();
+            aboutForm.Show(this);
         }
     }
 }

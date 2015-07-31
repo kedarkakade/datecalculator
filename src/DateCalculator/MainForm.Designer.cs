@@ -38,7 +38,10 @@
             this.FirstDate = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ResultSummary = new DateCalculator.UI.Controls.DateCalculatorSummary();
             this.AddSubtractDate = new System.Windows.Forms.TabPage();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.ResultedDate = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.Days = new System.Windows.Forms.NumericUpDown();
@@ -52,18 +55,24 @@
             this.Calculate2Button = new System.Windows.Forms.Button();
             this.FromDate = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.ResultedDate = new System.Windows.Forms.TextBox();
-            this.ResultSummary = new DateCalculator.UI.Controls.DateCalculatorSummary();
+            this.MainMenu = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ExitMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.ActionsMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.ResetMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.CalculateMenu = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.AboutMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.ApplicationTabs.SuspendLayout();
             this.DifferenceTab.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.AddSubtractDate.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Days)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Months)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Years)).BeginInit();
-            this.groupBox3.SuspendLayout();
+            this.MainMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // ApplicationTabs
@@ -71,7 +80,7 @@
             this.ApplicationTabs.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.ApplicationTabs.Controls.Add(this.DifferenceTab);
             this.ApplicationTabs.Controls.Add(this.AddSubtractDate);
-            this.ApplicationTabs.Location = new System.Drawing.Point(6, 12);
+            this.ApplicationTabs.Location = new System.Drawing.Point(6, 33);
             this.ApplicationTabs.Name = "ApplicationTabs";
             this.ApplicationTabs.SelectedIndex = 0;
             this.ApplicationTabs.Size = new System.Drawing.Size(341, 306);
@@ -115,7 +124,7 @@
             this.ResetButton.TabIndex = 5;
             this.ResetButton.Text = "Reset";
             this.ResetButton.UseVisualStyleBackColor = true;
-            this.ResetButton.Click += new System.EventHandler(this.ResetButton_Click);
+            this.ResetButton.Click += new System.EventHandler(this.ResetButtonClick);
             // 
             // CalculateButton
             // 
@@ -126,7 +135,7 @@
             this.CalculateButton.TabIndex = 4;
             this.CalculateButton.Text = "Calculate";
             this.CalculateButton.UseVisualStyleBackColor = true;
-            this.CalculateButton.Click += new System.EventHandler(this.CalculateButton_Click);
+            this.CalculateButton.Click += new System.EventHandler(this.CalculateButtonClick);
             // 
             // SecondDate
             // 
@@ -162,6 +171,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "First Date:";
             // 
+            // ResultSummary
+            // 
+            this.ResultSummary.AutoSize = true;
+            this.ResultSummary.BackColor = System.Drawing.SystemColors.Control;
+            this.ResultSummary.Location = new System.Drawing.Point(16, 141);
+            this.ResultSummary.Name = "ResultSummary";
+            this.ResultSummary.Results = null;
+            this.ResultSummary.Size = new System.Drawing.Size(307, 129);
+            this.ResultSummary.TabIndex = 3;
+            // 
             // AddSubtractDate
             // 
             this.AddSubtractDate.BackColor = System.Drawing.SystemColors.Control;
@@ -174,6 +193,26 @@
             this.AddSubtractDate.TabIndex = 1;
             this.AddSubtractDate.Text = "Addition/Subtraction to Date";
             this.AddSubtractDate.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.ResultedDate);
+            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(16, 198);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(307, 73);
+            this.groupBox3.TabIndex = 4;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Results";
+            // 
+            // ResultedDate
+            // 
+            this.ResultedDate.Enabled = false;
+            this.ResultedDate.Location = new System.Drawing.Point(15, 29);
+            this.ResultedDate.Name = "ResultedDate";
+            this.ResultedDate.Size = new System.Drawing.Size(276, 22);
+            this.ResultedDate.TabIndex = 0;
+            this.ResultedDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // groupBox2
             // 
@@ -297,7 +336,7 @@
             this.Reset2Button.TabIndex = 5;
             this.Reset2Button.Text = "Reset";
             this.Reset2Button.UseVisualStyleBackColor = true;
-            this.Reset2Button.Click += new System.EventHandler(this.Reset2Button_Click);
+            this.Reset2Button.Click += new System.EventHandler(this.Reset2ButtonClick);
             // 
             // Calculate2Button
             // 
@@ -308,7 +347,7 @@
             this.Calculate2Button.TabIndex = 4;
             this.Calculate2Button.Text = "Calculate";
             this.Calculate2Button.UseVisualStyleBackColor = true;
-            this.Calculate2Button.Click += new System.EventHandler(this.Calculate2Button_Click);
+            this.Calculate2Button.Click += new System.EventHandler(this.Calculate2ButtonClick);
             // 
             // FromDate
             // 
@@ -327,64 +366,104 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "From Date:";
             // 
-            // groupBox3
+            // MainMenu
             // 
-            this.groupBox3.Controls.Add(this.ResultedDate);
-            this.groupBox3.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(16, 198);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(307, 73);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Results";
+            this.MainMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.ActionsMenu,
+            this.helpToolStripMenuItem});
+            this.MainMenu.Location = new System.Drawing.Point(0, 0);
+            this.MainMenu.Name = "MainMenu";
+            this.MainMenu.Size = new System.Drawing.Size(359, 24);
+            this.MainMenu.TabIndex = 1;
+            this.MainMenu.Text = "menuStrip1";
             // 
-            // ResultedDate
+            // fileToolStripMenuItem
             // 
-            this.ResultedDate.Enabled = false;
-            this.ResultedDate.Location = new System.Drawing.Point(15, 29);
-            this.ResultedDate.Name = "ResultedDate";
-            this.ResultedDate.Size = new System.Drawing.Size(276, 22);
-            this.ResultedDate.TabIndex = 0;
-            this.ResultedDate.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ExitMenu});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "&File";
             // 
-            // ResultSummary
+            // ExitMenu
             // 
-            this.ResultSummary.AutoSize = true;
-            this.ResultSummary.BackColor = System.Drawing.SystemColors.Control;
-            this.ResultSummary.Location = new System.Drawing.Point(16, 141);
-            this.ResultSummary.Name = "ResultSummary";
-            this.ResultSummary.Results = null;
-            this.ResultSummary.Size = new System.Drawing.Size(307, 129);
-            this.ResultSummary.TabIndex = 3;
+            this.ExitMenu.Name = "ExitMenu";
+            this.ExitMenu.Size = new System.Drawing.Size(92, 22);
+            this.ExitMenu.Text = "E&xit";
+            this.ExitMenu.Click += new System.EventHandler(this.ExitMenuClick);
+            // 
+            // ActionsMenu
+            // 
+            this.ActionsMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ResetMenu,
+            this.CalculateMenu});
+            this.ActionsMenu.Name = "ActionsMenu";
+            this.ActionsMenu.Size = new System.Drawing.Size(59, 20);
+            this.ActionsMenu.Text = "&Actions";
+            // 
+            // ResetMenu
+            // 
+            this.ResetMenu.Name = "ResetMenu";
+            this.ResetMenu.Size = new System.Drawing.Size(123, 22);
+            this.ResetMenu.Text = "&Reset";
+            this.ResetMenu.Click += new System.EventHandler(this.ResetMenuClick);
+            // 
+            // CalculateMenu
+            // 
+            this.CalculateMenu.Name = "CalculateMenu";
+            this.CalculateMenu.Size = new System.Drawing.Size(123, 22);
+            this.CalculateMenu.Text = "&Calculate";
+            this.CalculateMenu.Click += new System.EventHandler(this.CalculateMenuClick);
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.AboutMenu});
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.helpToolStripMenuItem.Text = "&Help";
+            // 
+            // AboutMenu
+            // 
+            this.AboutMenu.Name = "AboutMenu";
+            this.AboutMenu.Size = new System.Drawing.Size(107, 22);
+            this.AboutMenu.Text = "&About";
+            this.AboutMenu.Click += new System.EventHandler(this.AboutMenuClick);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(359, 330);
+            this.ClientSize = new System.Drawing.Size(359, 342);
             this.Controls.Add(this.ApplicationTabs);
+            this.Controls.Add(this.MainMenu);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.MainMenu;
             this.MaximizeBox = false;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Date Calculator";
+            this.Text = "Date Calculator v2.0";
             this.ApplicationTabs.ResumeLayout(false);
             this.DifferenceTab.ResumeLayout(false);
             this.DifferenceTab.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.AddSubtractDate.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.Days)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Months)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Years)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.MainMenu.ResumeLayout(false);
+            this.MainMenu.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -416,6 +495,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox ResultedDate;
+        private System.Windows.Forms.MenuStrip MainMenu;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ExitMenu;
+        private System.Windows.Forms.ToolStripMenuItem ActionsMenu;
+        private System.Windows.Forms.ToolStripMenuItem ResetMenu;
+        private System.Windows.Forms.ToolStripMenuItem CalculateMenu;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem AboutMenu;
 
 
     }

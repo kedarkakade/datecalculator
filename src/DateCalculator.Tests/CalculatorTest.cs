@@ -8,7 +8,7 @@ namespace DateCalculator.Tests
     public class CalculatorTest
     {
         [TestMethod]
-        public void CalculateDifference_For_Years_Success()
+        public void CalculateDifferenceForYearsSuccess()
         {
             var firstDate = DateTime.Now;
             var secondDate = firstDate.AddYears(5);
@@ -19,7 +19,7 @@ namespace DateCalculator.Tests
         }
 
         [TestMethod]
-        public void CalculateDifference_For_Months_Success()
+        public void CalculateDifferenceForMonthsSuccess()
         {
             var firstDate = DateTime.Now;
             var secondDate = firstDate.AddMonths(5);
@@ -30,7 +30,7 @@ namespace DateCalculator.Tests
         }
 
         [TestMethod]
-        public void CalculateDifference_For_Days_Success()
+        public void CalculateDifferenceForDaysSuccess()
         {
             var firstDate = DateTime.Now;
             var secondDate = firstDate.AddDays(5);
@@ -41,7 +41,7 @@ namespace DateCalculator.Tests
         }
 
         [TestMethod]
-        public void CalculateDifference_For_All_Success()
+        public void CalculateDifferenceForAllSuccess()
         {
             var firstDate = DateTime.Parse("10/29/1979");
             var secondDate = DateTime.Parse("03/27/2010");
@@ -54,7 +54,7 @@ namespace DateCalculator.Tests
         }
 
         [TestMethod]
-        public void GetModifiedDate_Add_Year_Success()
+        public void GetModifiedDateAddYearSuccess()
         {
             var fromDate = DateTime.Parse("10/29/1979");
             const DateFunction function = DateFunction.Add;
@@ -66,7 +66,7 @@ namespace DateCalculator.Tests
         }
 
         [TestMethod]
-        public void GetModifiedDate_Add_Month_Success()
+        public void GetModifiedDateAddMonthSuccess()
         {
             var fromDate = DateTime.Parse("10/29/1979");
             const DateFunction function = DateFunction.Add;
@@ -78,7 +78,7 @@ namespace DateCalculator.Tests
         }
 
         [TestMethod]
-        public void GetModifiedDate_Add_Day_Success()
+        public void GetModifiedDateAddDaySuccess()
         {
             var fromDate = DateTime.Parse("10/29/1979");
             const DateFunction function = DateFunction.Add;
@@ -90,7 +90,7 @@ namespace DateCalculator.Tests
         }
 
         [TestMethod]
-        public void GetModifiedDate_Add_All_Success()
+        public void GetModifiedDateAddAllSuccess()
         {
             var fromDate = DateTime.Parse("10/29/1979");
             const DateFunction function = DateFunction.Add;
@@ -102,7 +102,7 @@ namespace DateCalculator.Tests
         }
 
         [TestMethod]
-        public void GetModifiedDate_Subtract_Year_Success()
+        public void GetModifiedDateSubtractYearSuccess()
         {
             var fromDate = DateTime.Parse("10/29/1979");
             const DateFunction function = DateFunction.Subtract;
@@ -114,7 +114,7 @@ namespace DateCalculator.Tests
         }
 
         [TestMethod]
-        public void GetModifiedDate_Subtract_Month_Success()
+        public void GetModifiedDateSubtractMonthSuccess()
         {
             var fromDate = DateTime.Parse("10/29/1979");
             const DateFunction function = DateFunction.Subtract;
@@ -126,7 +126,7 @@ namespace DateCalculator.Tests
         }
 
         [TestMethod]
-        public void GetModifiedDate_Subtract_Day_Success()
+        public void GetModifiedDateSubtractDaySuccess()
         {
             var fromDate = DateTime.Parse("10/29/1979");
             const DateFunction function = DateFunction.Subtract;
@@ -138,7 +138,7 @@ namespace DateCalculator.Tests
         }
 
         [TestMethod]
-        public void GetModifiedDate_Subtract_All_Success()
+        public void GetModifiedDateSubtractAllSuccess()
         {
             var fromDate = DateTime.Parse("10/29/1979");
             const DateFunction function = DateFunction.Subtract;

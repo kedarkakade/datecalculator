@@ -11,6 +11,12 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_094F244A45DDE5C19DDF80CD4E610C88"
+        "OwnerKey" = "8:_5798CE7D1D214598B6BB4F357AA2034A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_5798CE7D1D214598B6BB4F357AA2034A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -19,6 +25,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_5798CE7D1D214598B6BB4F357AA2034A"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_094F244A45DDE5C19DDF80CD4E610C88"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -126,6 +138,37 @@
         }
         "File"
         {
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_094F244A45DDE5C19DDF80CD4E610C88"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:DateCalculator.Lib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_094F244A45DDE5C19DDF80CD4E610C88"
+                    {
+                    "Name" = "8:DateCalculator.Lib.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:DateCalculator.Lib.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_C0135F7897F74B10ABB39D09EFD87070"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
         }
         "FileType"
         {
@@ -182,14 +225,14 @@
         {
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Date Calculator"
-        "ProductCode" = "8:{8F64A40A-47F8-4508-B794-C5CCA872AC9C}"
-        "PackageCode" = "8:{3F2AD22F-AF0D-4523-8A6E-9BD86145043D}"
+        "ProductCode" = "8:{DEA934DE-F92C-415A-8541-DDC935CA09B5}"
+        "PackageCode" = "8:{4F837861-0710-4E84-81EA-F80AD8507C78}"
         "UpgradeCode" = "8:{B138A4B7-0518-4604-B624-BC44989E1260}"
         "RestartWWWService" = "11:FALSE"
         "RemovePreviousVersions" = "11:TRUE"
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
-        "ProductVersion" = "8:1.0.0"
+        "ProductVersion" = "8:2.0.0"
         "Manufacturer" = "8:KK Softwares"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
@@ -717,7 +760,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_5798CE7D1D214598B6BB4F357AA2034A"
             {
-            "SourcePath" = "8:..\\DateCalculator\\obj\\Debug\\DateCalculator.exe"
+            "SourcePath" = "8:..\\DateCalculator\\obj\\Release\\DateCalculator.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C0135F7897F74B10ABB39D09EFD87070"
