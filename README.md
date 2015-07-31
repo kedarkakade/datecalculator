@@ -3,10 +3,10 @@ Date Calculator is a small desktop utility developed using Windows Forms .NET te
 
 Following are two modes of calculations that can be done with this utility.
 
-* Calculate Difference Between Two Dates
+###* Calculate Difference Between Two Dates
 
 ![](https://github.com/kedarkakade/datecalculator/blob/master/images/datecalculator1.png)
 
-* Add/Subtract To/From A Date
+###* Add/Subtract To/From A Date
 
 ![] (https://github.com/kedarkakade/datecalculator/blob/master/images/datecalculator2.png)
